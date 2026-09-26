@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Servet Toptan Gıda ürün kataloğu" />
+    <title>Servet Toptan Gıda | Ürün Kataloğu</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#urunler">Ürünlere geç</a>
+    <header class="site-header">
+      <a class="brand" href="#anasayfa" aria-label="Servet Toptan Gıda ana sayfa">
+        <img class="brand-mark" src="assets/servet-logo.svg" alt="" />
+        <span><strong>Servet</strong><small>Toptan Gıda</small></span>
+      </a>
+      <nav aria-label="Sayfa menüsü">
+        <a href="#urunler">Katalog</a>
+        <a href="#kategoriler">Kategoriler</a>
+      </nav>
+    </header>
+
+    <main id="anasayfa">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Ürün Kataloğu</p>
+          <h1>İhtiyacınız olan ürünler, tek katalogda.</h1>
+          <p class="hero-text">Gıda, içecek, temizlik ve günlük ihtiyaç ürünlerini kolayca inceleyin.</p>
+          <a class="primary-button" href="#urunler">Ürünleri incele <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-panel" aria-hidden="true">
+          <div class="panel-badge">Geniş ürün<br />çeşidi</div>
+          <div class="panel-shape shape-one"></div>
+          <div class="panel-shape shape-two"></div>
+          <span class="leaf leaf-one">●</span>
+          <span class="leaf leaf-two">●</span>
+        </div>
+      </section>
+
+      <section class="category-section" id="kategoriler" aria-labelledby="category-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Kolay seçim</p>
+            <h2 id="category-heading">Kategoriler</h2>
+          </div>
+          <p id="product-total" class="product-total"></p>
+        </div>
+        <div id="category-pills" class="category-pills" aria-label="Ürün kategorileri"></div>
+      </section>
+
+      <section class="catalog-section" id="urunler" aria-labelledby="catalog-heading">
+        <div class="catalog-toolbar">
+          <div>
+            <p class="eyebrow">Tüm ürünler</p>
+            <h2 id="catalog-heading">Katalog</h2>
+          </div>
+          <label class="search-box">
+            <span class="sr-only">Ürün ara</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.4-4.4m2.4-5.1a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+            <input id="search" type="search" placeholder="Ürün ara" autocomplete="off" />
+          </label>
+        </div>
+        <p id="result-summary" class="result-summary" aria-live="polite"></p>
+        <div id="product-grid" class="product-grid"></div>
+        <div class="load-more-wrap"><button id="load-more" class="secondary-button" type="button">Daha fazla göster</button></div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand brand-footer" href="#anasayfa"><img class="brand-mark" src="assets/servet-logo.svg" alt="" /><span><strong>Servet</strong><small>Toptan Gıda</small></span></a>
+      <p>Ürün kataloğu</p>
+    </footer>
+
+    <dialog id="product-dialog" class="product-dialog">
+      <button id="dialog-close" class="dialog-close" type="button" aria-label="Kapat">×</button>
+      <img id="dialog-image" alt="" />
+      <div><p id="dialog-category" class="eyebrow"></p><h2 id="dialog-title"></h2><p id="dialog-detail" class="dialog-detail"></p></div>
+    </dialog>
+
+    <script src="catalog-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
